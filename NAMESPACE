@@ -3,5 +3,6 @@
 export(fiRstore_auth)
 export(fiRstore_auth_app)
 export(fiRstore_auth_config)
+export(fiRstore_auth_configure)
 export(fiRstore_get)
 export(fiRstore_runQuery)

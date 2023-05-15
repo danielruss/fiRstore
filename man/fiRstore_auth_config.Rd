@@ -2,18 +2,33 @@
 % Please edit documentation in R/auth.R
 \name{fiRstore_auth_config}
 \alias{fiRstore_auth_config}
+\alias{fiRstore_auth_configure}
 \title{Configure application for fiRstore}
 \usage{
 fiRstore_auth_config(app)
+
+fiRstore_auth_configure(path)
 }
 \arguments{
-\item{app}{\itemize{
-\item an httr oauth application
-}
+\item{app}{an httr oauth application}
 
-This is change in the future as gargle transitions from
-httr to httr2.}
+\item{path}{The path to the JSON file containing
+the client Id/password associated with the GCP
+project.}
 }
 \description{
-Configure application for fiRstore
+Configures the httr oauth application.
+Gargle formerly used \link[httr:oauth_app]{httr::oauth_app}
+but is transitioning to \link[httr2:oauth_client]{httr2::oauth_client}.
+The fiRstore package is following the other packages such as
+bigrquery by having an auth_configure function that takes
+a path and uses an \link[httr2:oauth_client]{httr2::oauth_client}.
+}
+\note{
+This  change in the future as gargle continues the transition
+from httr to httr2.
+}
+\seealso{
+\link[bigrquery:bq_auth_configure]{bigrquery::bq_auth_configure}, \link[googledrive:googledrive-deprecated]{googledrive::drive_auth_config},
+\link[googledrive:drive_auth_configure]{googledrive::drive_auth_configure}
 }

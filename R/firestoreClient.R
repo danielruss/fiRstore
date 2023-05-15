@@ -27,6 +27,23 @@ fiRstore_get <- function(project,database="(default)",collection,document){
   jsonlite::toJSON(out,pretty = T)
 }
 
+#' Search for documents in GCP cloud Firestore
+#'
+#' @description
+#' Runs a query and returns the documents
+#' Wraps the [GCP Firestore runQueryr REST API](https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents/runQuery)
+#'
+#' @param project the GCP project
+#' @param database The firestore database default = (default)
+#' @param collection Document collection in the data base..
+#' @param query  JSON text
+#'
+#' An example query would look like this
+#' "{\"structuredQuery\":{\"from\":[{\"collectionId\":\"people\",\"allDescendants\":false}],\"where\":{\"fieldFilter\":{\"field\":{\"fieldPath\":\"FirstName\"},\"op\":\"EQUAL\",\"value\":{\"stringValue\":\"Daniel\"}}}}}"
+#'
+#' @return JSON text containing the results of the query
+#' @export
+#'
 fiRstore_runQuery <- function(project,database="(default)",collection,query){
   token <- fiRstore_auth()
   base_url = "https://firestore.googleapis.com/"
@@ -37,7 +54,8 @@ fiRstore_runQuery <- function(project,database="(default)",collection,query){
 
   resp <- gargle::request_make(req)
   out <- gargle::response_process(resp)
-  out
+
+  jsonlite::toJSON(out,pretty=T,auto_unbox = T)
 }
 
 ## Coming soon:

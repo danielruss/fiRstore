@@ -9,7 +9,8 @@ fiRstore_auth_config(app)
 \arguments{
 \item{app}{- an httr oauth application
 
-This is change in the future to match the googledrive package.}
+This is change in the future as gargle transitions from
+httr to httr2.}
 }
 \description{
 Configure application for fiRstore

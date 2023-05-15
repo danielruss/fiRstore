@@ -31,15 +31,31 @@ fiRstore_get <- function(project,database="(default)",collection,document){
 #'
 #' @description
 #' Runs a query and returns the documents
-#' Wraps the [GCP Firestore runQueryr REST API](https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents/runQuery)
+#' Wraps the [GCP Firestore runQuery REST API](https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents/runQuery)
+#'
+#' An example query would look like this
+#' ```
+#' {"structuredQuery":
+#'      {"from": [{
+#'          "collectionId":"people",
+#'          "allDescendants":false}],
+#'       "where":{
+#'         "fieldFilter":{
+#'            "field":{"fieldPath":"FirstName"},
+#'            "op":"EQUAL",
+#'            "value":{"stringValue":"Daniel"}
+#'            }
+#'          }
+#'      }
+#'  }
+#' ```
 #'
 #' @param project the GCP project
 #' @param database The firestore database default = (default)
 #' @param collection Document collection in the data base..
 #' @param query  JSON text
 #'
-#' An example query would look like this
-#' "{\"structuredQuery\":{\"from\":[{\"collectionId\":\"people\",\"allDescendants\":false}],\"where\":{\"fieldFilter\":{\"field\":{\"fieldPath\":\"FirstName\"},\"op\":\"EQUAL\",\"value\":{\"stringValue\":\"Daniel\"}}}}}"
+#'
 #'
 #' @return JSON text containing the results of the query
 #' @export

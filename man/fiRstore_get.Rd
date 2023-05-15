@@ -7,17 +7,25 @@
 fiRstore_get(project, database = "(default)", collection, document)
 }
 \arguments{
-\item{project}{- the GCP project}
+\item{project}{\itemize{
+\item the GCP project
+}}
 
-\item{database}{- The firestore database default = (default)}
+\item{database}{\itemize{
+\item The firestore database default = (default)
+}}
 
-\item{collection}{- Document collection in the data base..}
+\item{collection}{\itemize{
+\item Document collection in the data base..
+}}
 
-\item{document}{- Document that you are retrieving.}
+\item{document}{\itemize{
+\item Document that you are retrieving.
+}}
 }
 \value{
 the json document.
 }
 \description{
-Wraps the [GCP Firestore get REST API](https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents/get)
+Wraps the \href{https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents/get}{GCP Firestore get REST API}
 }

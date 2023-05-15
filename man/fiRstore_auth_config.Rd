@@ -7,7 +7,9 @@
 fiRstore_auth_config(app)
 }
 \arguments{
-\item{app}{- an httr oauth application
+\item{app}{\itemize{
+\item an httr oauth application
+}
 
 This is change in the future as gargle transitions from
 httr to httr2.}

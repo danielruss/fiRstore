@@ -13,15 +13,29 @@ fiRstore_runQuery(project, database = "(default)", collection, query)
 
 \item{collection}{Document collection in the data base..}
 
-\item{query}{JSON text
-
-An example query would look like this
-"{\"structuredQuery\":{\"from\":[{\"collectionId\":\"people\",\"allDescendants\":false}],\"where\":{\"fieldFilter\":{\"field\":{\"fieldPath\":\"FirstName\"},\"op\":\"EQUAL\",\"value\":{\"stringValue\":\"Daniel\"}}}}}"}
+\item{query}{JSON text}
 }
 \value{
 JSON text containing the results of the query
 }
 \description{
 Runs a query and returns the documents
-Wraps the [GCP Firestore runQueryr REST API](https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents/runQuery)
+Wraps the \href{https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents/runQuery}{GCP Firestore runQuery REST API}
+
+An example query would look like this
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{\{"structuredQuery":
+     \{"from": [\{
+         "collectionId":"people",
+         "allDescendants":false\}],
+      "where":\{
+        "fieldFilter":\{
+           "field":\{"fieldPath":"FirstName"\},
+           "op":"EQUAL",
+           "value":\{"stringValue":"Daniel"\}
+           \}
+         \}
+     \}
+ \}
+}\if{html}{\out{</div>}}
 }

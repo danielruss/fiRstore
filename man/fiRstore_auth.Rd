@@ -14,27 +14,39 @@ fiRstore_auth(
 )
 }
 \arguments{
-\item{email}{- Google identity of the user}
+\item{email}{\itemize{
+\item Google identity of the user
+}}
 
-\item{path}{- JSON key file for a service account user.}
+\item{path}{\itemize{
+\item JSON key file for a service account user.
+}}
 
-\item{scopes}{- Additional permissions associated with the token}
+\item{scopes}{\itemize{
+\item Additional permissions associated with the token
+}}
 
-\item{cache}{- OAuth token cache.}
+\item{cache}{\itemize{
+\item OAuth token cache.
+}}
 
-\item{use_oob}{- Are you using the out-of-band authentication}
+\item{use_oob}{\itemize{
+\item Are you using the out-of-band authentication
+}}
 
-\item{token}{- a prepared token (not sure why this is here,
-maybe I already have a token ... see [gargle::token_fetch()] for more info)}
+\item{token}{\itemize{
+\item a prepared token (not sure why this is here,
+maybe I already have a token ... see \code{\link[gargle:token_fetch]{gargle::token_fetch()}} for more info)
+}}
 }
 \value{
 Returns an invisible token.
 }
 \description{
 Authorizes fiRstore to access documents in Google Firestore.  This function
-is a wrapper around [gargle::token_fetch()].
+is a wrapper around \code{\link[gargle:token_fetch]{gargle::token_fetch()}}.
 
 The package does not supply a default application, so you will need to provide
 an application by calling fiRstore_auth_config(app = your_app).  To create
-an application call [httr::oauth_app()]
+an application call \code{\link[httr:oauth_app]{httr::oauth_app()}}
 }

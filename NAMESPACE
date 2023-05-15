@@ -3,4 +3,4 @@
 export(fiRstore_auth)
 export(fiRstore_auth_app)
 export(fiRstore_auth_config)
-export(fiRstore_get_document)
+export(fiRstore_get)

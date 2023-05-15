@@ -8,12 +8,19 @@
 #' Configure application for fiRstore
 #' @param app - an httr oauth application
 #'
-#' This is change in the future to match the googledrive package.
+#' This is change in the future as gargle transitions from
+#' httr to httr2.
+#'
 #' @export
 
 fiRstore_auth_config<-function(app){
   .auth$set_app(app)
 }
+
+fiRstore_auth_configure <- function(path){
+  .auth$set_app( gargle::gargle_oauth_client_from_json(path) )
+}
+
 #' gets the fiRstore application
 #'
 #'.This will change in the future to match the googledrive package.
